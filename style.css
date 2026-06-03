@@ -135,18 +135,17 @@ body::before{
 
     left:50%;
 
-    top:-70px;
+    top:430px;
 
     transform:translateX(-50%);
 
     width:10px;
     height:70px;
 
-    z-index:50;
+    z-index:999;
 
     animation:in 500ms 6s ease-out forwards;
 }
-
 .candle:after,
 .candle:before{
 
@@ -436,6 +435,10 @@ body::before{
         background-size:90%;
     }
 
+   .candle{
+        top:470px;
+    }
+
     .cake-container{
 
         top:38%;
@@ -452,7 +455,7 @@ body::before{
 
     .birthday-title{
 
-        font-size:2rem;
+        font-size:1.8rem;
     }
 
     .subtitle{
