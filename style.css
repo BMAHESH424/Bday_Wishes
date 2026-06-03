@@ -1,0 +1,446 @@
+/* =====================================================
+   PREMIUM BIRTHDAY UI
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+body{
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.55)
+    ),
+    url("./Cringe.jpg");
+
+    background-size:75%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:#0f172a;
+}
+
+
+@media(max-width:768px){
+
+    body{
+        background-size:90%;
+    }
+
+}
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 20%,
+        rgba(0,0,0,.45) 100%
+    );
+
+    pointer-events:none;
+}
+
+/* =====================================================
+   STARS
+===================================================== */
+
+#stars{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(
+        rgba(255,255,255,.18) 1px,
+        transparent 1px
+    );
+
+    background-size:140px 140px;
+
+    animation:moveStars 80s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes moveStars{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(200px);
+    }
+}
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+#cake{
+
+    position:absolute;
+
+    left:50%;
+
+    top:40%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.82);
+
+    z-index:20;
+}
+
+/* =====================================================
+   CANDLE
+===================================================== */
+
+.candle{
+
+    background:#ffffff;
+
+    border-radius:10px;
+
+    position:absolute;
+
+    left:50%;
+
+    top:300px;
+
+    margin-left:-5px;
+
+    width:10px;
+    height:70px;
+
+    z-index:50;
+
+    animation:in 500ms 6s ease-out forwards;
+}
+
+.candle:after,
+.candle:before{
+
+    background:
+    rgba(255,0,0,.4);
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:2px;
+}
+
+.candle:after{
+
+    top:15%;
+}
+
+.candle:before{
+
+    top:45%;
+}
+
+/* =====================================================
+   FLAME
+===================================================== */
+
+.fire{
+
+    border-radius:100%;
+
+    position:absolute;
+
+    top:-20px;
+
+    left:50%;
+
+    margin-left:-3px;
+
+    width:8px;
+    height:20px;
+
+    z-index:60;
+}
+
+.fire:nth-child(1){
+    animation:fire 2s 6.5s infinite;
+}
+
+.fire:nth-child(2){
+    animation:fire 1.5s 6.5s infinite;
+}
+
+.fire:nth-child(3){
+    animation:fire 1s 6.5s infinite;
+}
+
+.fire:nth-child(4){
+    animation:fire .5s 6.5s infinite;
+}
+
+.fire:nth-child(5){
+    animation:fire .2s 6.5s infinite;
+}
+
+@keyframes fire{
+
+    0%,100%{
+
+        background:
+        rgba(254,248,97,.9);
+
+        box-shadow:
+        0 0 20px #ffd700,
+        0 0 40px #ff9900;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+    50%{
+
+        background:
+        rgba(255,120,0,.7);
+
+        box-shadow:
+        0 0 30px #ff7700;
+
+        transform:
+        translateY(-12px)
+        scale(.8);
+    }
+}
+
+/* =====================================================
+   TITLE SECTION
+===================================================== */
+
+.hero{
+
+    position:absolute;
+
+    left:50%;
+
+    top:72%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    z-index:100;
+}
+
+.birthday-title{
+
+    font-size:3.3rem;
+
+    font-weight:700;
+
+    color:#d694c6;
+
+    letter-spacing:1px;
+
+    text-shadow:
+    0 4px 20px rgba(0,0,0,.45);
+}
+
+.subtitle{
+
+    margin-top:12px;
+
+    color:
+    rgba(255,255,255,.85);
+
+    font-size:1rem;
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+#surpriseBtn{
+
+    margin-top:25px;
+
+    padding:15px 32px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:
+    rgba(128, 39, 39, 0.12);
+
+    backdrop-filter:
+    blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+}
+
+#surpriseBtn:hover{
+
+    transform:
+    translateY(-3px);
+
+    background:
+    rgba(255,255,255,.18);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.25);
+}
+
+/* =====================================================
+   MESSAGE CARD
+===================================================== */
+
+.message-card{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    width:88%;
+    max-width:700px;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.65)
+    ),
+    url("./snap.jpg");
+
+    background-size:80%;
+    background-position:center;
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.40);
+
+    color:white;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    z-index:999;
+}
+
+.message-card h2{
+
+    margin-bottom:18px;
+}
+
+.message-card p{
+
+    line-height:1.8;
+
+    color:
+    rgba(255,255,255,.92);
+}
+
+.hidden{
+
+    display:none !important;
+}
+
+/* =====================================================
+   CAKE ENTRY
+===================================================== */
+
+@keyframes in{
+
+    to{
+        transform:translateY(0);
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    #cake{
+
+        transform:
+        translate(-50%,-50%)
+        scale(.60);
+    }
+
+    .candle{
+
+        top:145px;
+    }
+
+    .birthday-title{
+
+        font-size:2rem;
+    }
+
+    .subtitle{
+
+        font-size:.9rem;
+    }
+
+    #surpriseBtn{
+
+        width:90%;
+    }
+
+    .message-card{
+
+        width:92%;
+
+        padding:25px;
+    }
+}
