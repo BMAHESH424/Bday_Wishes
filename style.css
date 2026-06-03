@@ -37,14 +37,6 @@ body{
     background-color:#0f172a;
 }
 
-
-@media(max-width:768px){
-
-    body{
-        background-size:90%;
-    }
-
-}
 body::before{
 
     content:"";
@@ -96,20 +88,35 @@ body::before{
 }
 
 /* =====================================================
-   CAKE
+   CAKE CONTAINER
 ===================================================== */
 
-#cake{
+.cake-container{
 
     position:absolute;
 
     left:50%;
 
-    top:40%;
+    top:42%;
 
     transform:
     translate(-50%,-50%)
     scale(.82);
+
+    z-index:20;
+}
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+#cake{
+
+    position:relative;
+
+    display:block;
+
+    margin:0 auto;
 
     z-index:20;
 }
@@ -128,9 +135,9 @@ body::before{
 
     left:50%;
 
-    top:300px;
+    top:-70px;
 
-    margin-left:-5px;
+    transform:translateX(-50%);
 
     width:10px;
     height:70px;
@@ -155,12 +162,10 @@ body::before{
 }
 
 .candle:after{
-
     top:15%;
 }
 
 .candle:before{
-
     top:45%;
 }
 
@@ -259,7 +264,7 @@ body::before{
 
 .birthday-title{
 
-    font-size:3.3rem;
+    font-size:3.2rem;
 
     font-weight:700;
 
@@ -298,7 +303,7 @@ body::before{
     border-radius:60px;
 
     background:
-    rgba(128, 39, 39, 0.12);
+    rgba(255,255,255,.10);
 
     backdrop-filter:
     blur(15px);
@@ -359,6 +364,7 @@ body::before{
 
     background-size:80%;
     background-position:center;
+    background-repeat:no-repeat;
 
     border:
     1px solid rgba(255,255,255,.12);
@@ -378,6 +384,11 @@ body::before{
 .message-card h2{
 
     margin-bottom:18px;
+
+    color:white;
+
+    text-shadow:
+    0 2px 10px rgba(0,0,0,.5);
 }
 
 .message-card p{
@@ -385,7 +396,10 @@ body::before{
     line-height:1.8;
 
     color:
-    rgba(255,255,255,.92);
+    rgba(255,255,255,.95);
+
+    text-shadow:
+    0 2px 10px rgba(0,0,0,.4);
 }
 
 .hidden{
@@ -399,8 +413,16 @@ body::before{
 
 @keyframes in{
 
+    from{
+        transform:
+        translateX(-50%)
+        translateY(-120px);
+    }
+
     to{
-        transform:translateY(0);
+        transform:
+        translateX(-50%)
+        translateY(0);
     }
 }
 
@@ -410,16 +432,22 @@ body::before{
 
 @media(max-width:768px){
 
-    #cake{
+    body{
+        background-size:90%;
+    }
+
+    .cake-container{
+
+        top:38%;
 
         transform:
         translate(-50%,-50%)
-        scale(.60);
+        scale(.65);
     }
 
-    .candle{
+    .hero{
 
-        top:145px;
+        top:68%;
     }
 
     .birthday-title{
@@ -442,5 +470,11 @@ body::before{
         width:92%;
 
         padding:25px;
+
+        max-height:80vh;
+
+        overflow-y:auto;
+
+        background-size:90%;
     }
 }
